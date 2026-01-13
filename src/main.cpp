@@ -12,7 +12,8 @@ int main(int argc, char *argv[])
 
     QWidget window;
     window.setWindowTitle("Crab Crawler");
-    window.resize(800, 500);
+    window.setMinimumSize(800, 600);
+    window.resize(800, 600);
 
     auto *layout = new QVBoxLayout(&window);
     layout->setContentsMargins(0, 0, 0, 0);
