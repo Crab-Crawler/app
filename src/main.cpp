@@ -4,6 +4,7 @@
 #include <QDebug>
 
 #include "ui/navbar.h"
+#include "ui/content.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,9 +20,11 @@ int main(int argc, char *argv[])
 
     auto *navBar = new NavBar(&window);
     layout->addWidget(navBar);
-    layout->addStretch();
 
-    QObject::connect(navBar, &NavBar::addressEntered, [](const QString &text)
+    auto *content = new Content(&window);
+    layout->addWidget(content, 1);
+
+    QObject::connect(navBar, &NavBar::addressEntered, [content](const QString &text)
                      { qDebug() << "navigate to:" << text; });
 
     window.show();

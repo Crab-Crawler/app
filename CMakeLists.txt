@@ -12,6 +12,7 @@ qt_standard_project_setup()
 add_executable(CrabCrawler
     src/main.cpp
     src/ui/navbar.cpp
+    src/ui/content.cpp
 )
 
 target_link_libraries(CrabCrawler
