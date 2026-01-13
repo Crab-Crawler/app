@@ -6,13 +6,20 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(CURL REQUIRED)
 
 qt_standard_project_setup()
 
 add_executable(CrabCrawler
     src/main.cpp
+
     src/ui/navbar.cpp
     src/ui/content.cpp
+)
+
+target_link_libraries(CrabCrawler
+    PRIVATE Qt6::Widgets
+    ${CURL_LIBRARIES}
 )
 
 target_link_libraries(CrabCrawler
