@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QWidget window;
+    window.setWindowTitle("Crab Crawler");
     window.resize(800, 500);
 
     auto *layout = new QVBoxLayout(&window);
