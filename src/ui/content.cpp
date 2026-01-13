@@ -23,7 +23,7 @@ void Content::parseCrabcontent(const QString &input)
     {
         if (line.startsWith("text:"))
         {
-            result += "<p>" + line.mid(5).trimmed() + "</p>\n";
+            result += "<p>" + line.mid(5).trimmed().toHtmlEscaped() + "</p>\n";
         }
     }
 
