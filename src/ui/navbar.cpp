@@ -37,9 +37,8 @@ NavBar::NavBar(QWidget *parent)
     connect(m_forward, &QToolButton::clicked, this, &NavBar::forwardClicked);
     connect(m_refresh, &QToolButton::clicked, this, &NavBar::refreshClicked);
 
-    connect(m_address, &QLineEdit::returnPressed, this, [this] {
-        emit addressEntered(m_address->text());
-    });
+    connect(m_address, &QLineEdit::returnPressed, this, [this]
+            { emit addressEntered(m_address->text()); });
 }
 
 QLineEdit *NavBar::addressBar() const

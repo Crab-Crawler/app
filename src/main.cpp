@@ -20,9 +20,8 @@ int main(int argc, char *argv[])
     layout->addWidget(navBar);
     layout->addStretch();
 
-    QObject::connect(navBar, &NavBar::addressEntered, [](const QString &text) {
-        qDebug() << "navigate to:" << text;
-    });
+    QObject::connect(navBar, &NavBar::addressEntered, [](const QString &text)
+                     { qDebug() << "navigate to:" << text; });
 
     window.show();
     return app.exec();
