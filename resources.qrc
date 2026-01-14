@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/angle-left-solid-full.svg</file>
+        <file>icons/angle-right-solid-full.svg</file>
+        <file>icons/arrows-rotate-solid-full.svg</file>
+    </qresource>
+</RCC>

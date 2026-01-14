@@ -9,12 +9,15 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 find_package(CURL REQUIRED)
 
 qt_standard_project_setup()
+qt_add_resources(RESOURCES resources.qrc)
 
 set(SOURCES
     src/main.cpp
 
     src/ui/navbar.cpp
     src/ui/content.cpp
+
+    ${RESOURCES}
 )
 
 if(WIN32)
@@ -26,8 +29,4 @@ endif()
 target_link_libraries(CrabCrawler
     PRIVATE Qt6::Widgets
     ${CURL_LIBRARIES}
-)
-
-target_link_libraries(CrabCrawler
-    PRIVATE Qt6::Widgets
 )

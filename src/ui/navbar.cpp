@@ -9,19 +9,22 @@ NavBar::NavBar(QWidget *parent)
     : QWidget(parent)
 {
     auto *layout = new QHBoxLayout(this);
-    layout->setContentsMargins(6, 6, 6, 6);
-    layout->setSpacing(6);
+    layout->setContentsMargins(2, 6, 6, 6);
+    layout->setSpacing(2);
 
     m_back = new QToolButton(this);
-    m_back->setIcon(style()->standardIcon(QStyle::SP_ArrowBack));
+    m_back->setIcon(QIcon(":/icons/angle-left-solid-full.svg"));
+    m_back->setIconSize(QSize(24, 24));
     m_back->setAutoRaise(true);
 
     m_forward = new QToolButton(this);
-    m_forward->setIcon(style()->standardIcon(QStyle::SP_ArrowForward));
+    m_forward->setIcon(QIcon(":/icons/angle-right-solid-full.svg"));
+    m_forward->setIconSize(QSize(24, 24));
     m_forward->setAutoRaise(true);
 
     m_refresh = new QToolButton(this);
-    m_refresh->setIcon(style()->standardIcon(QStyle::SP_BrowserReload));
+    m_refresh->setIcon(QIcon(":/icons/arrows-rotate-solid-full.svg"));
+    m_refresh->setIconSize(QSize(24, 24));
     m_refresh->setAutoRaise(true);
 
     m_address = new QLineEdit(this);
