@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.2.1)
+cmake_minimum_required(VERSION 4.1.1)
 
 project(CrabCrawler VERSION 0.1 LANGUAGES CXX)
 
@@ -10,12 +10,18 @@ find_package(CURL REQUIRED)
 
 qt_standard_project_setup()
 
-add_executable(CrabCrawler
+set(SOURCES
     src/main.cpp
 
     src/ui/navbar.cpp
     src/ui/content.cpp
 )
+
+if(WIN32)
+    add_executable(CrabCrawler WIN32 ${SOURCES})
+else()
+    add_executable(CrabCrawler ${SOURCES})
+endif()
 
 target_link_libraries(CrabCrawler
     PRIVATE Qt6::Widgets

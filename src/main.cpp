@@ -9,6 +9,7 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    app.setStyle("fusion");
 
     QWidget window;
     window.setWindowTitle("Crab Crawler");
